@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Let’s See How You Feel 😘?</title>
+  <link rel="icon" type="image/x-icon" href="heart.png">
+  <style>
+    body {
+      background: #ffe6e6;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #cc0066;
+    }
+
+    button {
+      margin: 20px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yesBtn {
+      background-color: #66cc66;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #ff4d4d;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    #gif1 {
+      display: none;
+      margin: 30px auto;
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: black;
+    }
+
+    video {
+      display: none;
+      margin: 30px auto;
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: black;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Do you love me?</h1>
+
+  <button id="yesBtn">Yes</button>
+  <button id="noBtn">No</button>
+
+  <br>
+
+  <!-- GIF shown when "Yes" is clicked -->
+  <img id="gif1" src="haha.gif" alt="Happy Reaction" />
+
+  <!-- Video shown when "No" is clicked -->
+  <video id="video2">
+    <source src="aray ko.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const gif1 = document.getElementById('gif1');
+    const video2 = document.getElementById('video2');
+
+    yesBtn.addEventListener('click', () => {
+      video2.pause();
+      video2.currentTime = 0;
+      video2.style.display = 'none';
+
+      gif1.style.display = 'block';
+    });
+
+    noBtn.addEventListener('click', () => {
+      gif1.style.display = 'none';
+
+      video2.style.display = 'block';
+      video2.play();
+    });
+  </script>
+
+</body>
+</html>
